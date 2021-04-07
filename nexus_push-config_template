@@ -6,10 +6,10 @@ from getpass import getpass
 host = input('Enter Nexus hostname/IP: ')
 username = input('Enter Username: ')
 password = getpass('Enter password: ')
-#nexus_list = 'nexus_device_list'
+#nexus_list = 'nexus_device_list.txt'
 
-#with open(nexus_device_list) as nexus:
-#	nex_dev = nexus.read().splitlines()
+#with open(nexus_list) as nexus:
+#	host = nexus.read().splitlines()
 
 #for dev in nex_dev:
 nex_device = { 
