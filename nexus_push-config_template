@@ -6,6 +6,7 @@ from getpass import getpass
 host = input('Enter Nexus hostname/IP: ')
 username = input('Enter Username: ')
 password = getpass('Enter password: ')
+command = input('Enter command: ')
 #nexus_list = 'nexus_device_list.txt'
 
 #with open(nexus_list) as nexus:
@@ -21,6 +22,6 @@ nex_device = {
 
 ssh_nex = ConnectHandler(**nex_device)
 
-output = ssh_nex.send_command('show version')
+output = ssh_nex.send_command(command)
 print(output)
 
