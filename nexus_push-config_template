@@ -1,0 +1,26 @@
+#!usr/bin/env python3
+
+from netmiko import ConnectHandler
+from getpass import getpass
+
+host = input('Enter Nexus hostname/IP: ')
+username = input('Enter Username: ')
+password = getpass('Enter password: ')
+#nexus_list = 'nexus_device_list'
+
+#with open(nexus_device_list) as nexus:
+#	nex_dev = nexus.read().splitlines()
+
+#for dev in nex_dev:
+nex_device = { 
+    'device_type': 'cisco_nxos',
+    'host': host,
+    'username': username,
+    'password': password,
+    }	
+
+ssh_nex = ConnectHandler(**nex_device)
+
+output = ssh_nex.send_command('show version')
+print(output)
+
